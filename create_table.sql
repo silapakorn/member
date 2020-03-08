@@ -1,0 +1,20 @@
+CREATE TABLE `member` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `username` varchar(50) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `first_name` varchar(255) NOT NULL,
+  `last_name` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `phone_number` varchar(20) NOT NULL,
+  `address` varchar(2000) DEFAULT NULL,
+  `post_code` varchar(255) DEFAULT NULL,
+  `salary` double NOT NULL,
+  `reference_cod` varchar(255) DEFAULT NULL,
+  `enabled` tinyint(1) DEFAULT 1,
+  `create_date` datetime(6) DEFAULT NULL,
+  `create_by` varchar(255) DEFAULT NULL,
+  `update_by` varchar(255) DEFAULT NULL,
+  `update_date` datetime(6) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `member_un` (`username`)
+) ENGINE=InnoDB AUTO_INCREMENT=44 DEFAULT CHARSET=utf8
