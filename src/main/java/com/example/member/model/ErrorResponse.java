@@ -1,12 +1,22 @@
 package com.example.member.model;
 
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateDeserializer;
+import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateSerializer;
+
 import java.time.LocalDate;
 import java.util.List;
 
 public class ErrorResponse {
+    @JsonDeserialize(using = LocalDateDeserializer.class)
+    @JsonSerialize(using = LocalDateSerializer.class)
     private LocalDate timestamp;
     private Integer status;
     private List<String> errors;
+
+    public ErrorResponse() {
+    }
 
     public ErrorResponse(List<String> errors, int status) {
         this.timestamp = LocalDate.now();

@@ -48,9 +48,13 @@ public class MemberController {
     public Member getInfo() {
         LOG.info("Start MemberController.getInfo method");
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-        UserDetails user = (UserDetails) auth.getPrincipal();
-        String username = user.getUsername();
-        return memberService.findByUserName(username);
+        if(auth != null) {
+            UserDetails user = (UserDetails) auth.getPrincipal();
+            String username = user.getUsername();
+            return memberService.findByUserName(username);
+        } else {
+            return null;
+        }
     }
 
 }
