@@ -23,7 +23,6 @@ public class CustomUserDetailsService implements UserDetailsService {
     @Transactional
     public UserDetails loadUserByUsername(String username) {
         LOG.debug("Start CustomUserDetailsService.loadUserByUsername method username: {}", username);
-        // Let people login with either username or email
         User user = userService.findByUsername(username);
         if (user == null) {
             throw new UsernameNotFoundException("user invalid");

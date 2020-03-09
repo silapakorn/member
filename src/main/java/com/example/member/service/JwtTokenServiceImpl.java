@@ -24,9 +24,7 @@ public class JwtTokenServiceImpl implements JwtTokenService {
     @Override
     public String createToken(String username, String password) throws Exception {
         authenticate(username, password);
-
-        final UserDetails userDetails = customUserDetailsService.loadUserByUsername(password);
-
+        final UserDetails userDetails = customUserDetailsService.loadUserByUsername(username);
         return jwtTokenUtil.generateToken(userDetails);
     }
 

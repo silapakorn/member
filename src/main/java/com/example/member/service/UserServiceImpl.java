@@ -14,6 +14,10 @@ public class UserServiceImpl implements UserService {
     @Override
     public User findByUsername(String username) {
         Member member = memberRepository.findByUsername(username);
-        return new User(member);
+        if (member != null) {
+            return new User(member);
+        } else {
+            return null;
+        }
     }
 }

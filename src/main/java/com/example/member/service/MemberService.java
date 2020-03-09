@@ -10,10 +10,4 @@ public interface MemberService {
     Member findByUserName(String username);
 
     List<String> validate(Member member);
-
-    Integer exists(String username);
-
-    String get();
-
-    String get2();
 }

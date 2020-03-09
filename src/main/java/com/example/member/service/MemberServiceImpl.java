@@ -66,21 +66,4 @@ public class MemberServiceImpl implements MemberService {
         }
         return errors;
     }
-
-    @Override
-    public Integer exists(String username) {
-       List<String> list = new ArrayList<>();
-       list.add("Hello");
-        return list.size();
-    }
-
-    @Override
-    public String get() {
-        return "Hello";
-    }
-
-    @Override
-    public String get2() {
-        return "Hello";
-    }
 }

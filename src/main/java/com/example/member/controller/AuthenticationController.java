@@ -4,7 +4,7 @@ import com.example.member.model.JwtRequest;
 import com.example.member.model.JwtResponse;
 import com.example.member.service.CustomUserDetailsService;
 import com.example.member.service.JwtTokenService;
-import org.mockito.InjectMocks;
+import com.example.member.service.MemberService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -13,15 +13,18 @@ import org.springframework.web.bind.annotation.*;
 @CrossOrigin
 public class AuthenticationController {
 
-    @InjectMocks
+    @Autowired
     private JwtTokenService jwtTokenService;
 
     @Autowired
     private CustomUserDetailsService customUserDetailsService;
 
+    @Autowired
+    private MemberService memberService;
+
     @PostMapping("/authenticate")
     public ResponseEntity<JwtResponse> createAuthenticationToken(@RequestBody JwtRequest authenticationRequest) throws Exception {
-        final String token = jwtTokenService.createToken(authenticationRequest.getUsername(),authenticationRequest.getPassword());
+        String token = jwtTokenService.createToken(authenticationRequest.getUsername(),authenticationRequest.getPassword());
         return ResponseEntity.ok(new JwtResponse(token));
     }
 }
