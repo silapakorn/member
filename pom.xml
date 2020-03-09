@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.example</groupId>
 	<artifactId>member</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0.0</version>
 	<name>member</name>
 	<description>Member project for Spring Boot</description>
 
@@ -39,10 +39,6 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 			<exclusions>
-<!--				<exclusion>-->
-<!--					<groupId>junit</groupId>-->
-<!--					<artifactId>junit</artifactId>-->
-<!--				</exclusion>-->
 				<exclusion>
 					<groupId>org.junit.vintage</groupId>
 					<artifactId>junit-vintage-engine</artifactId>
