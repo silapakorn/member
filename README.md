@@ -44,4 +44,14 @@ Start project
 ```
 java -jar ./target/member-1.0.0.jar
 ```
+Example
+
+Register member
+![picture](https://github.com/silapakorn/member/blob/master/request_register.png?raw=true)
+
+Authenticate get token
+![picture](https://github.com/silapakorn/member/blob/master/request_authen.png?raw=true)
+
+ Get infomation by token
+![picture](https://github.com/silapakorn/member/blob/master/request_info.png?raw=true)
 
