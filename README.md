@@ -44,7 +44,7 @@ Start project
 ```
 java -jar ./target/member-1.0.0.jar
 ```
-Example
+Testing RESTful Calls
 
 Register member
 ![picture](https://github.com/silapakorn/member/blob/master/request_register.png?raw=true)
